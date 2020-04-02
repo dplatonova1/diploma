@@ -1,5 +1,6 @@
 {
   "name": "diploma",
+  "homepage": "https://dplatonova1.github.io/diploma/",
   "version": "1.0.0",
   "description": "Diploma project for Yandex Praktikum",
   "main": "index.js",
@@ -11,8 +12,9 @@
     "ChromeAndroid 80"
   ],
   "scripts": {
-    "build": "rimraf dist && webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open --watch"
+    "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,6 @@
   "bugs": {
     "url": "https://github.com/dplatonova1/diploma/issues"
   },
-  "homepage": "https://github.com/dplatonova1/diploma#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
@@ -34,11 +35,13 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "~2.0.1",
     "html-webpack-plugin": "3.2.0",
     "image-webpack-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
+    "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
