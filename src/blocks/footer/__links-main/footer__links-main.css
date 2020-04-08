@@ -1,0 +1,8 @@
+@import url('../__link-main/footer__link-main.css');
+
+.footer__links-main{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    
+}

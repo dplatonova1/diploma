@@ -1,0 +1,14 @@
+.results__more{
+    background-color: #FFFFFF;
+    border-radius: 80px;
+    border: none;
+    font-family: "Roboto Medium";
+    margin-bottom: 80px;
+    width: 288px;
+    height: 64px;
+    opacity: 1;
+}
+
+.results__more:hover{
+    opacity: 0.9;
+}

@@ -1,0 +1,18 @@
+@import url('../typo/_fs_l/typo_fs_l.css');
+@import url('../typo/_fs_xl/typo_fs_xl.css');
+@import url('../typo/_fs_m/typo_fs_m.css');
+@import url('../typo/_fs_s/typo_fs_s.css');
+@import url('../typo/_fs_sm/typo_fs_sm.css');
+@import url('../typo/_fs_xs/typo_fs_xs.css');
+@import url('../typo/_fs_xxs/typo_fs_xxs.css');
+@import url('../typo/_lh_l/typo_lh_l.css');
+@import url('../typo/_lh_xl/typo_lh_xl.css');
+@import url('../typo/_lh_m/typo_lh_m.css');
+@import url('../typo/_lh_sm/typo_lh_sm.css');
+@import url('../typo/_lh_s/typo_lh_s.css');
+@import url('../typo/_lh_xs/typo_lh_xs.css');
+@import url('../typo/_ff_roboto-slab/typo_ff_roboto-slab.css');
+
+.typo {
+    font-weight: normal;
+  }

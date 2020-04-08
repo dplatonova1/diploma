@@ -1,0 +1,15 @@
+@import url('../__card/__cardtitle/results__cardtitle.css');
+@import url('../__card/__date/results__date.css');
+@import url('../__card/__image/results__image.css');
+@import url('../__card/__paragraph/results__paragraph.css');
+@import url('../__card/__source/results__source.css');
+
+.results__card{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 576px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+}

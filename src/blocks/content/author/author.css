@@ -1,0 +1,10 @@
+@import url('../author/__description/author__description.css');
+@import url('../author/__photo/author__photo.css');
+
+
+.author{
+    color: #1A1B22;
+    display: flex;
+    flex-direction: row;
+    margin: 80px 216px 80px 104px;
+}

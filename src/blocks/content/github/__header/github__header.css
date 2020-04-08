@@ -1,0 +1,11 @@
+@import url('/blocks/content/github/__header/__title/github__title.css');
+@import url('/blocks/content/github/__header/__button/github__button.css');
+
+.github__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    
+}

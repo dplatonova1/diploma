@@ -1,0 +1,7 @@
+.analytics__legend-scale{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 89%;
+}

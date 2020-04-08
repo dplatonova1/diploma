@@ -1,0 +1,11 @@
+@import url('../__container/__card/results__card.css');
+
+.results__container{
+    margin: 0 104px 64px 104px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}

@@ -1,0 +1,8 @@
+@import url('../__link-social/footer__link-social.css');
+
+.footer__links-social{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 104px;
+}

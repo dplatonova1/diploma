@@ -1,0 +1,11 @@
+@import url('./__graph/analytics__graph.css');
+@import url('./__legend/analytics__legend.css');
+@import url('./_date/chart_date.css');
+@import url('./_count/chart_count.css');
+
+.analytics__chart{
+    display: flex;
+    flex-direction: row;
+    height: 24px;
+    padding-bottom: 56px;
+}

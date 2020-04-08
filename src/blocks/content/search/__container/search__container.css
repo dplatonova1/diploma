@@ -1,0 +1,10 @@
+@import url('../__container/__input/search__input.css');
+@import url('../__container/__paragraph/search__paragraph.css');
+@import url('../__container/__title/search__title.css');
+@import url('../__container/__button/search__button.css');
+@import url('../__container/__input-text/search__input-text.css');
+
+.search__container{
+    width: 42.3%;
+    margin: 160px 416px 80px 416px;
+}

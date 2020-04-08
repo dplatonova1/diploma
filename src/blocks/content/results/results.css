@@ -1,0 +1,12 @@
+@import url('../results/__container/results__container.css');
+@import url('../results/__more/results__more.css');
+
+
+.results{
+    color: #1A1B22;
+    background-color: #F5F6F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+@import url('../__links/__link/content__link.css');
+
+.content__links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 120px auto 80px 104px
+}

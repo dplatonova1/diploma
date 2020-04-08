@@ -1,0 +1,57 @@
+@import url('../blocks/header/header.css');
+@import url('../blocks/content/content.css');
+@import url('../blocks/typo/typo.css');
+@import url('../blocks/footer/footer.css');
+@import url('../blocks/segment/segment.css');
+@import url('../blocks/button/button.css');
+
+@font-face {
+  src: url(../fonts/roboto-medium.woff) format("woff");
+  font-family: Roboto Medium;
+  font-weight: 500;
+}
+
+@font-face {
+    src: url(../fonts/roboto-regular.woff) format("woff");
+    font-family: Roboto;
+    font-weight: normal;
+  }
+
+@font-face {
+    src: url(../fonts/robotoslab-regular.woff) format("woff");
+    font-family: Roboto Slab;
+    font-weight: normal;
+  }
+
+@font-face {
+    src: url(../fonts/sourcesanspro-regular.woff) format("woff");
+    font-family: Source Sans Pro;
+    font-weight: normal;
+  }
+
+html {
+  background-color: #ffffff;
+  font-size: 16px;
+}
+body
+{
+    margin: 0px; padding: 0px
+}
+
+.page {
+    min-width: 320px;
+    max-width: 1440px;
+    font-family: "Roboto", sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+    margin: auto;
+  }

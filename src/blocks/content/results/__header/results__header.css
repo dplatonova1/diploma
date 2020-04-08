@@ -1,0 +1,10 @@
+@import url('../__header/__button/results__button.css');
+@import url('../__header/__title/results__title.css');
+
+.results__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

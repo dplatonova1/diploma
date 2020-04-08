@@ -1,0 +1,8 @@
+@import url('./__numbers/analytics__numbers.css');
+@import url('./__stat/analytics__stat.css');
+@import url('./__wrapper/analytics__wrapper.css');
+@import url('./__link/analytics__link.css');
+
+.analytics{
+    color: #1A1B22;
+}

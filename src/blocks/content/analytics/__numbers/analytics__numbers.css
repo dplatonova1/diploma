@@ -1,0 +1,6 @@
+@import url('./__chart/analytics__chart.css');
+@import url('./__subtitle/analytics__subtitle.css');
+
+.analytics__numbers{
+    margin: 0 104px 116px 104px;
+}

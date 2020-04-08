@@ -7,7 +7,11 @@ const webpack = require("webpack");
 const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: { main: "./src/index.js",
+          analytics: "./src/analytics/index.js",
+          about: "./src/about/index.js" 
+
+},
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[chunkhash].js"
@@ -49,7 +53,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.[contenthash].css"
+      filename: './pages/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -60,10 +64,20 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      inject: false,
-      template: "./src/index.html",
-      filename: "index.html"
-    }),
+      inject: true,
+      template: './src/index.html',
+      filename: 'index.html'
+  }),
+  new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/about.html',
+      filename: 'about.html'
+  }),
+  new HtmlWebpackPlugin({
+    inject: true,
+    template: './src/paper.html',
+    filename: 'paper.html'
+}),
     new WebpackMd5Hash(),
 
     new webpack.DefinePlugin({

@@ -1,0 +1,16 @@
+@import url('../__link/_black/header__link_black.css');
+
+.header__link{
+    text-align: center;
+    text-decoration: none; 
+    margin-left: 17px;
+    border: none;
+    opacity: 0.5;
+    color: #ffffff;
+}
+
+.header__link:hover{
+    padding-bottom: 28px;
+    border-bottom: 3px solid;
+    opacity: 1;
+}
