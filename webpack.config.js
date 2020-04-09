@@ -47,14 +47,13 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: "file-loader?name=./vendor/[name].[ext]"
+        loader: "file-loader?name=../vendor/[name].[ext]"
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      test: /\.css$/,
-      filename: './pages/[name].[contenthash].css'
+      filename: './css/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
