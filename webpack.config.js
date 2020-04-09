@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
+      test: /\.css$/,
       filename: './pages/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
