@@ -10,14 +10,14 @@
     <title>NewsAnalyzer</title>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
-
+    <link rel="stylesheet" href="../src/blocks/swiper/swiper.min.css">
 
 </head>
 
 <body>
     <div class="page typo">
         <header class="header header_black segment_black-on-white">
-            <p class="header__logo">NewsAnalyzer</p>
+            <a href="index.html" class="header__logo content__link">NewsAnalyzer</a>
             <nav class="header__links">
                 <a class="header__link header__link_black segment_black-on-white typo typo_fs_sm typo_lh_sm"
                     href="index.html">Главная</a>
@@ -111,7 +111,8 @@
             </section>
 
             <section class="author">
-                <img src="./images/author.jpg" alt="photo of Daria Platonova" class="author__photo">
+                <img src="<%=require('./images/author.jpg').default%>" alt="photo of Daria Platonova"
+                    class="author__photo">
                 <div class="author__description">
                     <h2 class="typo typo_ff_roboto-slab typo_fs_l typo_lh_l">Об авторе</h2>
                     <p class="typo typo_fs_sm typo_lh_sm">Это блок с описанием автора проекта. Здесь следует указать,
@@ -136,24 +137,109 @@
                         target="_blank" href="https://github.com/dplatonova1/diploma">Открыть в Github
                         &gt;</a>
                 </div>
-                <!-- <div class="swiper-container">
+
+                <!-- Swiper -->
+  
+                <div class="swiper-container">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide slide">Slide 
-                          <p class="slide__date">14 августа, 2019</p>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
 
-                          <div class="slide__author">
-                            <img src="" alt="photo of a comment author" class="slide__image">
-                            <h3 class="slide__name">Антон Долинин</h3>
-                            <p class="slide__email">anton@yandex.ru</p>
-                          </div>
+                            <div class="slide__author">
+                                <img src="<%=require('./images/anton.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Антон Долинин</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">Emmet (formerly Zen Coding) is a web-
+                                developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
 
-                          <p class="slide__paragraph">Emmet (formerly Zen Coding) is a web-
-                            developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                      </div>
+                            <div class="slide__author">
+                                <img src="<%=require('./images/mariia.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Мария Фёдорова</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">mariiifed@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open   Tools >
+                                Plugins > Available plugins   and find and install Emmet plugin.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
+
+                            <div class="slide__author">
+                                <img src="<%=require('./images/inga.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Инга Иванова</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">ingaiva@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">With Emmet, you can type CSS-like expressions 
+                                that can be dynamically parsed, and produce 
+                                output depending on what you type in the abb...</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
+
+                            <div class="slide__author">
+                                <img src="<%=require('./images/anton.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Антон Долинин</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">Emmet (formerly Zen Coding) is a web-
+                                developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
+
+                            <div class="slide__author">
+                                <img src="<%=require('./images/mariia.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Мария Фёдорова</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">mariiifed@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open   Tools >
+                                Plugins > Available plugins   and find and install Emmet plugin.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="slide__date typo typo_fs_xs typo_lh_s">14 августа, 2019</p>
+
+                            <div class="slide__author">
+                                <img src="<%=require('./images/inga.png').default%>" alt="photo of a comment author" class="slide__image">
+                                <div class="slide__author-wrapper">
+                                    <h3 class="slide__name typo typo_ff_roboto-slab typo_fs_m typo_lh_sm">Инга Иванова</h3>
+                                    <p class="slide__email typo typo_fs_xs typo_lh_s">ingaiva@yandex.ru</p>
+                                </div>
+                            </div>
+                          
+                            <p class="typo typo_fs_s typo_lh_s">With Emmet, you can type CSS-like expressions 
+                                that can be dynamically parsed, and produce 
+                                output depending on what you type in the abb...</p>
+                        </div>
                     </div>
-                    
+                    <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
-                  </div> -->
+                    <!-- Add Arrows -->
+                    <img src="<%=require('./images/slider-control-left.svg').default%>" alt="navigation label left"
+                        class="swiper-button-prev">
+                    <img src="<%=require('./images/slider-control-right.svg').default%>" alt="navigation label right"
+                        class="swiper-button-next">
+                </div>
+            
+
+
 
             </section>
         </main>
@@ -166,7 +252,8 @@
                 <li><a href="about.html" class="footer__link-main content__link typo typo_fs_sm typo_lh_sm">О
                         проекте</a></li>
                 <li><a href="https://praktikum.yandex.ru/"
-                        class="footer__link-main content__link typo typo_fs_sm typo_lh_sm" target="_blank">Яндекс Практикум</a></li>
+                        class="footer__link-main content__link typo typo_fs_sm typo_lh_sm" target="_blank">Яндекс
+                        Практикум</a></li>
             </ul>
             <ul class="footer__links-social">
                 <li class="footer__link-social content__link">
@@ -199,6 +286,38 @@
         </footer>
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+    <script src="../src/js/swiper/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5,
+            spaceBetween: 16,
+            slidesPerGroup: 1,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            //   breakpoints: {
+            //   640: {
+            //     slidesPerView: 1,
+            //     spaceBetween: 8,
+            //   },
+            //   768: {
+            //     slidesPerView: 2,
+            //     spaceBetween: 8,
+            //   },
+            //   1024: {
+            //     slidesPerView: 5,
+            //     spaceBetween: 16,
+            //   },
+            // }
+        });
+    </script>
 </body>
 
 </html>
