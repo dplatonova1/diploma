@@ -8,3 +8,10 @@
     align-items: center;
     width: 100%;
 }
+
+
+@media screen and (max-width: 768px){
+    .segment__header{
+        display: flex;
+        flex-direction: column;}
+}

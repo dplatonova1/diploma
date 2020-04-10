@@ -8,3 +8,15 @@
     flex-direction: row;
     margin: 80px 216px 80px 104px;
 }
+
+@media screen and (max-width: 768px){
+    .author{
+        margin: 42px 40px 10px 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .author{
+        margin: 20px 16px 44px 16px;
+    }
+}

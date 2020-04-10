@@ -3,3 +3,16 @@
 .analytics__stat{
     margin: 80px auto 108px 104px;
 }
+
+
+@media screen and (max-width: 768px){
+    .analytics__stat{
+        margin: 64px 40px 40px 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .analytics__stat{
+        margin: 16px 16px 24px 16px;
+    }
+}

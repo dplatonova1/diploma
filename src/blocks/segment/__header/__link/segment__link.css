@@ -2,5 +2,18 @@
     background-color: transparent;
     border: none;
     font-family: "Roboto Medium";
-    margin: 80px 104px 64px 0px;
+    margin: 80px 104px 64px 0;
    }
+
+   @media screen and (max-width: 768px){
+    .segment__link{
+        margin: 48px 40px 68px 0;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .segment__link{
+        width: 100%;
+        margin: 24px 16px 32px 16px;
+    }
+}

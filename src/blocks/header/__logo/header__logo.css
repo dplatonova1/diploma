@@ -5,3 +5,15 @@
     border: none;
     margin-left: 104px;
 }
+
+@media screen and (max-width: 768px){
+    .header__logo{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .header__logo{
+        margin-left: 16px;
+    }
+}

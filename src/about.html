@@ -55,8 +55,20 @@
 
             <section class="tech">
                 <h2 class="tech__title typo typo_ff_roboto-slab typo_fs_l typo_lh_l">Используемые технологии</h2>
-                <table class="tech__container typo typo_fs_sm typo_lh_sm">
-                    <tr>
+                <div class="tech__container">
+                    <p class="typo typo_fs_sm">HTML</p>
+                        <p class="typo typo_fs_sm">CSS</p>
+                        <p class="typo typo_fs_sm tech__order">JS</p>
+                        <p class="typo typo_fs_sm tech__order">Webpack</p>
+                        <img src="<%=require('./images/html.svg').default%>" alt="html icon"
+                            class="tech__image">
+                        <img src="<%=require('./images/css.svg').default%>" alt="css icon"
+                            class="tech__image">
+                        <img src="<%=require('./images/js.svg').default%>" alt="javascript icon"
+                            class="tech__image tech__order">
+                        <img src="<%=require('./images/webpack.svg').default%>" alt="webpack icon"
+                            class="tech__image tech__order">
+                    <!-- <tr>
                         <th>HTML</th>
                         <th>CSS</th>
                         <th>JS</th>
@@ -75,8 +87,8 @@
                         <td><img src="<%=require('./images/webpack.svg').default%>" alt="webpack icon"
                             class="tech__image">
                         </td>
-                    </tr>
-                </table>
+                    </tr> -->
+                </div>
 
 
             </section>

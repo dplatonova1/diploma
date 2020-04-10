@@ -2,3 +2,15 @@
     color: #1A1B22;
     margin: 160px 521px 94px 104px;
 }
+
+@media screen and (max-width: 768px){
+    .clients{
+        margin: 96px 40px 30px 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .clients{
+        margin: 72px 16px 30px 16px;
+    }
+}

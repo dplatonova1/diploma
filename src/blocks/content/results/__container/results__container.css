@@ -9,3 +9,15 @@
     grid-column-gap: 16px;
     grid-row-gap: 16px;
 }
+
+@media screen and (max-width: 768px){
+    .results__container{
+        margin: 0 40px 22px 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .results__container{
+        margin: 0 16px 13px 16px;
+    }
+}

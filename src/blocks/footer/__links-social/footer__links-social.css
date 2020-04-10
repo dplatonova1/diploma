@@ -6,3 +6,15 @@
     list-style: none;
     margin-right: 104px;
 }
+
+@media screen and (max-width: 768px){
+    .footer__links-social{
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .footer__links-social{
+        margin-right: 16px;
+    }
+}

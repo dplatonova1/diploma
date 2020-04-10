@@ -1,0 +1,7 @@
+
+
+@media screen and (max-width: 440px){
+    .tech__order{
+        order: 1;
+    }
+}

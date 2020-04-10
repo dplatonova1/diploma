@@ -1,9 +1,18 @@
 @import url('../tech/__title/tech__title.css');
 @import url('../tech/__container/tech__container.css');
+@import url('../tech/__order/tech__order.css');
+
 
 .tech {
 display: flex;
 flex-direction: row;
 color: #1A1B22;
 background-color: #F5F6F7;;
+width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .tech{
+        display: flex;
+        flex-direction: column;}
 }

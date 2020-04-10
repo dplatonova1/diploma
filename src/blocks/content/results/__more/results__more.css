@@ -12,3 +12,15 @@
 .results__more:hover{
     opacity: 0.9;
 }
+
+@media screen and (max-width: 768px){
+    .results__more{
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .results__more{
+        margin-bottom: 44px;
+    }
+}

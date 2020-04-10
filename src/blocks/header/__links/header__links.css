@@ -4,3 +4,15 @@
     font-family: 'Roboto Medium';
     margin-right: 104px;
 }
+
+@media screen and (max-width: 768px){
+    .header__links{
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .header__links{
+        margin-right: 16px;
+    }
+}
