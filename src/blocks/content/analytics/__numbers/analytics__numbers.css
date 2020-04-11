@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 768px){
     .analytics__numbers{
-        margin: 40px 40px 50px 40px;
+        margin: 0 40px;
     }
 }
 

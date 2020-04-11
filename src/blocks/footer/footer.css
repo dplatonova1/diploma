@@ -9,7 +9,22 @@
     justify-content: space-between;
     background-color: #ffffff;
     align-items: center;
-    height: 80px;
+    min-height: 80px;
     width: 100%;
-    margin: 0px;
+}
+
+@media screen and (max-width: 768px){
+    .footer{
+        min-height: 64px;
+    }
+}
+
+
+@media screen and (max-width: 610px){
+    .footer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 224px;  
+        position: relative;  }
 }

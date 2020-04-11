@@ -1,3 +1,10 @@
 .typo_lh_l {
     line-height: 2.875rem;
   }
+
+  @media screen and (max-width: 768px){
+    .typo_lh_l {
+      line-height: 2.125rem;
+    }
+  
+  } 

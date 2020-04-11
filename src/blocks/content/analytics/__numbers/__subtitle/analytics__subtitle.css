@@ -1,3 +1,10 @@
 .analytics__subtitle{
     margin: 0 auto 48px auto;
 }
+
+@media screen and (max-width: 440px){
+    .analytics__subtitle{
+       font-size: 1.375rem;
+       margin-bottom: 16px;
+    }
+}

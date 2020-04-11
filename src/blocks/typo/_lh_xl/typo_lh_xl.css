@@ -3,10 +3,9 @@
     line-height: 4rem;
   }
 
-  /* @media screen and (max-width: 425px){
+  @media screen and (max-width: 768px){
     .typo_lh_xl {
-     
-      line-height: 2.75rem;
+      line-height: 2.5rem;
     }
   
-  }  */
+  } 

@@ -14,3 +14,9 @@
     border-bottom: 3px solid;
     opacity: 1;
 }
+
+@media screen and (max-width: 440px){
+.header__link:hover{
+    padding-bottom: 16px;
+}
+}

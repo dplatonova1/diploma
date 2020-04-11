@@ -2,4 +2,11 @@
     text-transform: uppercase;
     color: #B6BCBF;
     padding-right: 40px;
+    margin: 0;
+}
+
+@media screen and (max-width: 440px){
+    .analytics__legend-text{
+        padding-right: 15px;
+    }
 }
