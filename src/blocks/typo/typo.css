@@ -12,6 +12,7 @@
 @import url('../typo/_lh_s/typo_lh_s.css');
 @import url('../typo/_lh_xs/typo_lh_xs.css');
 @import url('../typo/_ff_roboto-slab/typo_ff_roboto-slab.css');
+@import url('../typo/_ff_sourcecsans/typo_ff_sourcesans.css');
 
 .typo {
     font-weight: normal;
