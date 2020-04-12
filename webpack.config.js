@@ -29,7 +29,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+          isDev ? "style-loader" :{loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../",
+          }},
           "css-loader", 
           "postcss-loader",
         ],
@@ -41,19 +44,17 @@ module.exports = {
           "file-loader?name=./images/[name].[ext]",
           {
             loader: "image-webpack-loader",
-            options: {},
+            options: {
+              bypassODenbug: true,
+              disable: true 
+            },
           },
         ],
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'vendor/fonts/',
-          publicPath: 'vendor/fonts/',
-        }
-    }
+        loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
+      }
     ],
   },
   plugins: [
