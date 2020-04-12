@@ -1,15 +1,18 @@
 .segment__title{
-    margin: 80px 0 64px 104px;
+    margin: 80px 30px 64px 104px;
+    width: 40%;
 }
 
 @media screen and (max-width: 768px){
     .segment__title{
         margin: 40px 0 32px 40px;
+        width: 40%;
     }
 }
 
 @media screen and (max-width: 440px){
     .segment__title{
         margin: 32px 16px 16px 16px;
+        width: 100%;
     }
 }

@@ -3,6 +3,8 @@
 @import url('../__container/__title/search__title.css');
 @import url('../__container/__button/search__button.css');
 @import url('../__container/__input-text/search__input-text.css');
+@import url('../__container/__rect/search__rect.css');
+
 
 .search__container{
     width: 42.3%;
@@ -12,14 +14,14 @@
 
 @media screen and (max-width: 768px){
     .search__container{
-        width: 42.3%;
         margin: 104px auto 48px auto;
+        width: 58%
     }
 }
 
 @media screen and (max-width: 440px){
     .search__container{
-        width: 100%;
+        width: 90%;
         margin: 86px 16px 32px 16px;
     }
 }

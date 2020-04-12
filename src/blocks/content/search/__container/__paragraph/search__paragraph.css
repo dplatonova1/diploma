@@ -1,4 +1,15 @@
 .search__paragraph{
     margin: 0;
     width: 90%;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+
+@media screen and (max-width: 440px){
+    .search__paragraph{
+        width: 100%;
+        font-size: 1.25rem;
+        line-height: 1.625rem; 
+    }
 }

@@ -2,7 +2,7 @@ import "./pages/index.css";
 
 import img from './images/author.jpg';
 import ico from './images/favicon.ico';
-import lead from './images/lead.png';
+import lead from './images/lead.jpg';
 import card from './images/card_image.png';
 import image01 from './images/image_01.png';
 import image04 from './images/image_04.png';
