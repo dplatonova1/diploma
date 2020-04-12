@@ -50,7 +50,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'vendor/fonts/'
+          outputPath: 'vendor/fonts/',
+          publicPath: 'vendor/fonts/',
         }
     }
     ],
