@@ -9,3 +9,7 @@ import image04 from './images/image_04.png';
 import image05 from './images/image_05.png';
 import image06 from './images/image_06.png';
 import image07 from './images/image_07.png';
+import robotomedium from './vendor/fonts/roboto-medium.woff';
+import robotoregular from './vendor/fonts/roboto-regular.woff';
+import robotoslab from './vendor/fonts/robotoslab-regular.woff';
+import sourcesans from './vendor/fonts/sourcesanspro-regular.woff';
