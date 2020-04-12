@@ -3,7 +3,13 @@
     margin: 160px 521px 94px 104px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1280px){
+    .clients{
+        margin: 160px 300px 94px 104px;
+    }
+}
+
+@media screen and (max-width: 860px){
     .clients{
         margin: 96px 40px 30px 40px;
     }

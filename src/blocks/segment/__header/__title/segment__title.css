@@ -12,7 +12,7 @@
 
 @media screen and (max-width: 440px){
     .segment__title{
-        margin: 32px 16px 16px 16px;
+        margin: 32px 0 16px 16px;
         width: 100%;
     }
 }

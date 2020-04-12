@@ -1,4 +1,7 @@
+@import url('../github/__button/github__button.css');
 .github{
     color: #1A1B22;
     background-color: #F5F6F7;
+    position: relative;
+    width: 100%;
 }

@@ -1,0 +1,16 @@
+@media screen and (max-width: 440px){
+    .github__button{
+        border: 1px solid #1A1B22;
+        box-sizing: border-box;
+        border-radius: 80px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 288px;
+        height: 56px;
+        text-align: center;
+        padding-top: 15px;
+        margin: 0;
+    }
+}
+

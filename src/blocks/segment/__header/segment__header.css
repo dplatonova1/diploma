@@ -14,5 +14,6 @@
     .segment__header{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;}
+        align-items: flex-start;
+        width: 90%;}
 }
