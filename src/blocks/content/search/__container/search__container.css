@@ -9,6 +9,7 @@
 .search__container{
     width: 42.3%;
     margin: 160px auto 80px auto;
+    z-index: 1;
 }
 
 
