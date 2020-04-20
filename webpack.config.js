@@ -70,17 +70,17 @@ module.exports = {
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/index.html",
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/about.html",
       filename: "about.html",
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/paper.html",
       filename: "paper.html",
     }),

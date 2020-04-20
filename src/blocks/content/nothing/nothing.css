@@ -3,8 +3,7 @@
 @import url('../nothing/__title/nothing__title.css');
 
 .nothing {
-    display: none;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

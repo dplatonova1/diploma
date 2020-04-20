@@ -13,3 +13,10 @@ import robotomedium from './vendor/fonts/roboto-medium.woff';
 import robotoregular from './vendor/fonts/roboto-regular.woff';
 import robotoslab from './vendor/fonts/robotoslab-regular.woff';
 import sourcesans from './vendor/fonts/sourcesanspro-regular.woff';
+import {SearchInput} from './js/components/SearchInput.js';
+
+
+// const search = new SearchInput(document.querySelector('.search__button'));
+// SearchInput.submit();
+
+

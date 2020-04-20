@@ -1,5 +1,9 @@
 .results__cardtitle{
     margin: 0 24px 16px 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
 }
 
 @media screen and (max-width: 768px){

@@ -1,12 +1,25 @@
 .results__image{
     width: 100%;
-    min-height: 47%;
+    object-fit: cover;
+    height: 272px;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
 }
 
 @media screen and (max-width: 1280px){
     .results__image{
-        min-height: 35%;
+        height: 272px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .results__image{
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .results__image{
+        height: 196px;
     }
 }
