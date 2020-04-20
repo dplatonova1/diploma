@@ -1,0 +1,9 @@
+@import url('./__legend-scale/analytics__legend-scale.css');
+@import url('./__legend-text/analytics__legend-text.css');
+@import url('./__legend-textbox/analytics__legend-textbox.css');
+
+
+.analytics__legend{
+    display: flex;
+    flex-direction: column;
+}

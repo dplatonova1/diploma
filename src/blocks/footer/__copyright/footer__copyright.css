@@ -1,0 +1,18 @@
+.footer__copyright{
+    color: #B6BCBF;
+    margin-left: 104px;
+}
+
+@media screen and (max-width: 768px){
+    .footer__copyright{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 610px){
+    .footer__copyright{
+        margin-left: 16px;
+        margin-top:40px;
+        order: 1;
+    }
+}

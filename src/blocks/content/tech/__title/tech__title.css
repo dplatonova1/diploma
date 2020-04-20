@@ -1,0 +1,24 @@
+.tech__title{
+    margin: 80px auto 162px 104px;
+    width: 24%;
+}
+
+@media screen and (max-width: 1120px){
+    .tech__title{
+        margin: 80px auto 40px 104px;
+    }
+}
+
+@media screen and (max-width: 860px){
+    .tech__title{
+        margin: 40px auto 40px 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .tech__title{
+        margin: 32px 16px 0 16px;
+    width: 90%;
+
+    }
+}

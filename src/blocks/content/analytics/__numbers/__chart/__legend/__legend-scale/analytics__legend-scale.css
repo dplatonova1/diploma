@@ -1,0 +1,14 @@
+.analytics__legend-scale{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 89%;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 440px){
+    .analytics__legend-scale{
+       display: none;
+    }
+}

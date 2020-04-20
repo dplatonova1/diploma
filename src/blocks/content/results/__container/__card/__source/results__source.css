@@ -1,0 +1,11 @@
+.results__source{
+    color: #B6BCBF;
+    margin: auto 24px 24px 24px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px){
+    .results__source{
+        margin: 12px 16px 16px 16px;    }
+}

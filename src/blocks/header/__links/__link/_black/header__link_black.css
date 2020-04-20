@@ -1,0 +1,8 @@
+.header__link_black {
+    text-align: center;
+    text-decoration: none; 
+    margin-left: 17px;
+    border: none;
+    opacity: 0.5;
+    color: #1A1B22;
+}

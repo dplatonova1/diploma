@@ -1,0 +1,7 @@
+.analytics__link{
+    font-style: italic;
+}
+
+.analytics__link:last-child{
+    opacity: 0.5;
+}

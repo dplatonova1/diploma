@@ -1,0 +1,23 @@
+@import url('../__link-social/footer__link-social.css');
+
+.footer__links-social{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 104px;
+}
+
+@media screen and (max-width: 768px){
+    .footer__links-social{
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 610px){
+    .footer__links-social{
+        margin-right: 16px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

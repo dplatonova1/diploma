@@ -1,0 +1,17 @@
+.segment__link{
+    background-color: transparent;
+    font-family: "Roboto Medium";
+    margin: 80px 104px 64px 0;
+   }
+
+   @media screen and (max-width: 768px){
+    .segment__link{
+        margin: 48px 40px auto 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .segment__link{
+        margin: 0 16px 32px 16px;
+    }
+}

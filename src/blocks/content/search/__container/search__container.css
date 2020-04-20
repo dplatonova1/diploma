@@ -1,0 +1,28 @@
+@import url('../__container/__input/search__input.css');
+@import url('../__container/__paragraph/search__paragraph.css');
+@import url('../__container/__title/search__title.css');
+@import url('../__container/__button/search__button.css');
+@import url('../__container/__input-text/search__input-text.css');
+@import url('../__container/__rect/search__rect.css');
+
+
+.search__container{
+    width: 42.3%;
+    margin: 160px auto 80px auto;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 768px){
+    .search__container{
+        margin: 104px auto 48px auto;
+        width: 58%
+    }
+}
+
+@media screen and (max-width: 440px){
+    .search__container{
+        width: 90%;
+        margin: 86px 16px 32px 16px;
+    }
+}

@@ -1,0 +1,21 @@
+.header__logo{
+    font-family: "Roboto Slab";
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: none;
+    margin-left: 104px;
+}
+
+@media screen and (max-width: 768px){
+    .header__logo{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .header__logo{
+        margin-left: 16px;
+        font-size: 1rem;
+        line-height: 1.375rem; 
+    }
+}

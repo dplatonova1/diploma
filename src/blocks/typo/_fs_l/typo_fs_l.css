@@ -1,0 +1,11 @@
+
+.typo_fs_l {
+    font-size: 2.5rem;
+  }
+
+   @media screen and (max-width: 768px){
+    .typo_fs_l {
+      font-size: 1.875rem;
+    }
+  
+  } 

@@ -1,0 +1,21 @@
+.author__description{
+    width: 40%;
+}
+
+@media screen and (max-width: 1280px){
+    .author__description{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .author__description{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .author__description{
+        width: 100%;
+    }
+}

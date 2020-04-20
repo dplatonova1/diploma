@@ -1,0 +1,19 @@
+@import url('../__links/__link/content__link.css');
+
+.content__links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 120px auto 80px 104px
+}
+
+@media screen and (max-width: 768px){
+    .content__links{
+        margin: 96px auto 64px 40px    }
+}
+
+@media screen and (max-width: 440px){
+    .content__links{
+        display: none;
+    }
+}

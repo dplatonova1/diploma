@@ -1,0 +1,17 @@
+.chart_date{
+    color: #1A1B22;
+    width: 12%;
+}
+
+@media screen and (max-width: 768px){
+    .chart_date{
+        width: 24%;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .chart_date{
+        width: 45%;
+    }
+    
+}

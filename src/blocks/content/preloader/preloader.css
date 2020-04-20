@@ -1,0 +1,14 @@
+@import url('./__image/preloader__image.css');
+@import url('./__text/preloader__text.css');
+
+.preloader {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	margin: 0;
+	min-height: 282px;
+	background-color: #F5F6F7;
+	position: relative;
+}

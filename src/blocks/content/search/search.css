@@ -1,0 +1,22 @@
+@import url('../search/__container/search__container.css');
+
+.search{
+min-height: 576px;
+width: 100%;
+background-image: url(../../../images/lead.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+
+@media screen and (max-width: 440px){
+    .search{
+        min-height: 536px;
+    }
+}

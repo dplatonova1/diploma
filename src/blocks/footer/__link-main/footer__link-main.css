@@ -1,0 +1,15 @@
+.footer__link-main{
+padding: 0 24px 0px 24px;
+}
+
+@media screen and (max-width: 440px){
+    .footer__link-main{
+        padding: 0 20px;
+        }
+}
+
+@media screen and (max-width: 610px){
+    .footer__link-main{
+        padding: 0 16px 0px 16px;
+        }
+}

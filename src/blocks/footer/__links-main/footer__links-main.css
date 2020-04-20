@@ -1,0 +1,18 @@
+@import url('../__link-main/footer__link-main.css');
+
+.footer__links-main{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 610px){
+    .footer__links-main{
+        flex-direction: column;
+        margin-top: 20px;
+        min-height: 120px;
+        justify-content: space-between;
+    }
+}

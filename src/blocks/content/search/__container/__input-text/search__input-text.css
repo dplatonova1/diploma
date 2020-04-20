@@ -1,0 +1,17 @@
+.search__input-text{
+    border-radius: 100px;
+    border-color: transparent;
+    width: 70%;
+    color: #1A1B22;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 440px){
+    .search__input-text{
+        margin-bottom: 16px;
+        width: 100%;
+        height: 56px;
+        padding-left: 3px;
+    }
+
+}
