@@ -1,0 +1,14 @@
+.error{
+    color: rgb(192, 57, 43);
+    background-color: #fff;
+    position: absolute;
+    transform: translateY(-40px);
+    transition: 2.5s ease-in-out;
+    width: 250px;
+    text-align: center;
+    margin: 0;
+    left: 1%;
+    border-radius: 100px;
+    top: 0;
+}
+

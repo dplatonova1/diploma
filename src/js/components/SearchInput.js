@@ -2,20 +2,34 @@ import { NewsCard } from "./NewsCard.js";
 import { NewsCardList } from "./NewsCardList.js";
 import { NewsApi } from "../modules/NewsApi.js";
 
-//бахнем константы
+//бахнем константы 
 const results = document.querySelector(".results");
 const resultsContainer = document.querySelector(".results__container");
 const resultsMore = document.querySelector(".results__more");
 const preloader = document.querySelector(".preloader");
 const nothingFound = document.querySelector(".nothing");
+const error = document.querySelector(".error");
+//до сюда перенесла в index.js
 let date = new Date();
 let weekAgo = new Date();
 weekAgo.setDate(weekAgo.getDate() - 7);
-document.forms.search.addEventListener("submit", function (event) {
-  //вешаем обраблтчик на сабмит формы
+
+
+//валидируем форму, позже забрать функцию как метод класса, но сейчас пока перенесла в индекс
+export default function validate(event){
+  if(event.target.checkValidity()){
+    return error.textContent='';
+  } else{
+    document.getElementById('error').classList.add('error');
+    return error.textContent='Нужно ввести ключевое слово';
+  }
+};
+
+
+export function lotsofstuff (event) {//очень большая функция, нужно разделить на куски
+
   event.preventDefault(); //предотвращаем перезагрузку
   results.classList.remove("segment_hidden");
-  // const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort8' : 'https://praktikum.tk/cohort8';
   const serverUrl =
     "http://newsapi.org/v2/everything?" +
     `q=${document.forms.search.elements.search.value}&` +
@@ -23,6 +37,7 @@ document.forms.search.addEventListener("submit", function (event) {
     `to=${date}&` +
     "language=ru&" +
     "pageSize=100";
+
   const newsApi = new NewsApi({
     baseUrl: serverUrl,
     method: "GET",
@@ -37,21 +52,37 @@ document.forms.search.addEventListener("submit", function (event) {
         nothingFound.classList.remove("segment_hidden");
         preloader.classList.add("segment_hidden");
         results.classList.add("segment_hidden");
-      } else {
-       
+      } else {   
+        nothingFound.classList.add("segment_hidden");
         const resultsArray = cards.articles.map(function (element) {
           const card = new NewsCard(
             element.title,
             element.urlToImage,
             element.publishedAt,
             element.description,
-            element.source.name
+            element.source.name,
+            element.url
           );
           return card;
         });
+
+        localStorage.setItem('newscards', JSON.stringify(cards));//записали принятые от сервера данные в локальное хранилище
         const cardlist = new NewsCardList(resultsContainer, resultsArray);
         cardlist.render(); //рендерим контейнер с карточками
-     
+
+        let resultSize=3;
+        
+        function resultSizeIncrement (){
+          console.log(cardlist.cardArray.slice(0, resultSize));
+          if (resultSize<=cardlist.cardArray.length){
+            return resultSize= resultSize+3;
+          } else {
+            return resultsMore.classList.add("segment_hidden");
+          }  
+        }
+
+        resultsMore.addEventListener('click', resultSizeIncrement);//по клику на показать ещё мы три раза показываем айтемы аррэя
+
         window.setTimeout(function () {
           preloader.classList.add("segment_hidden");
           resultsMore.classList.remove("segment_hidden"); //и показываем кнопку
@@ -59,17 +90,29 @@ document.forms.search.addEventListener("submit", function (event) {
       }
     })
 
+    .catch(() => {
+      nothingFound.classList.remove("segment_hidden");
+      preloader.classList.add("segment_hidden");
+      results.classList.add("segment_hidden");
+    });
+  event.target.reset();
+}
 
-    // .catch(() => {
-    //   nothingFound.classList.remove("segment_hidden");
-    //   preloader.classList.add("segment_hidden");
-    //   results.classList.add("segment_hidden");
-    // });
-});
+document.forms.search.elements.search.addEventListener("input", validate);//перенесла в index.js
+document.forms.search.addEventListener("submit", validate);//перенесла в index.js
+document.forms.search.addEventListener("submit", lotsofstuff);//перенесла в index.js
 
 
-//управление длиной страницы
-
-//сперва мы выдаем пэйджсайз 3
-//по клику на показать ещё перезаписываем значение пэйджсайз=пс+3
-//и так пока пэйджсайз не будет 100, или конец массива,  кнопку убираем
+// export class SearchInput {
+//   constructor(callback){
+//     this.callback=callback;
+//   }
+//   validate(event){
+//     if(event.target.checkValidity()){
+//       return error.textContent='';
+//     } else{
+//       document.getElementById('error').classList.add('error');
+//       return error.textContent='Нужно ввести ключевое слово';
+//     }
+//   }
+// }

@@ -31,10 +31,11 @@
                     <h1 class="search__title typo typo_ff_roboto-slab typo_fs_xl typo_lh_xl">Что в мире творится?</h1>
                     <p class="search__paragraph">Введите в поиске любую тему и узнайте,
                         насколько популярной она была в новостях за прошедшую неделю.</p>
-                    <form class="search__input" name ="search">
+                    <form class="search__input" name ="search" novalidate>
                         <input type="text" placeholder="Введите тему новости" name="search"
-                            class="search__input-text typo typo_fs_s typo_lh_s" pattern="^[\wа-яА-Я]{1,}" required>
-                        <button type="submit" class="button search__button typo typo_fs_sm typo_lh_sm">Искать</button>
+                            class="search__input-text typo typo_fs_s typo_lh_s"  required>
+                            <span class= "error typo typo_fs_s typo_lh_s" id="error"></span>
+                            <button type="submit" class="button search__button typo typo_fs_sm typo_lh_sm">Искать</button>
                     </form>
                 </div>
                 <div class="search__rect"></div>

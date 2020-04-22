@@ -2,8 +2,7 @@
     width:64px;
     height: 64px;
     margin: 0 16px 16px 0;
-    object-position: center;
-    object-fit: contain;
+    background-size: cover;
     border-radius: 100px;
 }
 
