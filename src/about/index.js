@@ -15,7 +15,7 @@ const githubApi = new GithubApi({
   baseUrl: commitsUrl,
   method: "GET",
   headers: {
-    authorization: "c432bec73f94d8b2a5a94020b608711efb8a4ce7",
+    _authorization: "d739e7a78fa79eef8c5187e0c4071c271dd5099e",
     "Content-Type": "application/json",
   },
 }); //создаём экземпляр класса апи для коммитов

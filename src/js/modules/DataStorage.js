@@ -1,22 +1,20 @@
 export class DataStorage {
-  constructor(options) {
-    this.options = options;
+  constructor() {
+    
   }
-  checkStorage(storage, property){
-    if (storage.includes(property)&&dateStamp===new Date()){
-return property;
-    } else {
-      return storage.length=0;
-    }
+//   checkStorage(storage, property){
+//     if (storage.includes(property)&&dateStamp===new Date()){
+// return property;
+//     } else {
+//       return storage.length=0;
+//     }
+//   }
+  setData(key, data){
+    localStorage.setItem(`${key}`, JSON.stringify(data));//записали принятые от сервера данные в локальное хранилище
   }
-  setData(){
-    localStorage.setItem('newscards', JSON.stringify(cards));//записали принятые от сервера данные в локальное хранилище
-  }
-  getData() {
-    if (localStorage.getItem("newscards")) {
-      newscards = JSON.parse(localStorage.getItem("newscards"));
-      console.log(newscards);
-    }
+  getData(key) {
+    const getObject = JSON.parse(localStorage.getItem(`${key}`));
+     return getObject;  
   }
 }
 // запрос к этому классу создаётся при сабмите формы, до обращения к апи. 

@@ -1,38 +1,44 @@
 import { NewsCard } from "./NewsCard.js";
 import { NewsCardList } from "./NewsCardList.js";
 import { NewsApi } from "../modules/NewsApi.js";
+import { DataStorage } from "../modules/DataStorage.js";
 
-//бахнем константы 
+//бахнем константы
 const results = document.querySelector(".results");
 const resultsContainer = document.querySelector(".results__container");
 const resultsMore = document.querySelector(".results__more");
 const preloader = document.querySelector(".preloader");
 const nothingFound = document.querySelector(".nothing");
 const error = document.querySelector(".error");
-//до сюда перенесла в index.js
+const pageSize = 3;
+//до сюда перенесла в constants
 let date = new Date();
 let weekAgo = new Date();
 weekAgo.setDate(weekAgo.getDate() - 7);
 
 
 //валидируем форму, позже забрать функцию как метод класса, но сейчас пока перенесла в индекс
-export default function validate(event){
-  if(event.target.checkValidity()){
-    return error.textContent='';
-  } else{
-    document.getElementById('error').classList.add('error');
-    return error.textContent='Нужно ввести ключевое слово';
+export default function validate(event) {
+  if (event.target.checkValidity()) {
+    return (error.textContent = "");
+  } else {
+    document.getElementById("error").classList.add("error");
+    return (error.textContent = "Нужно ввести ключевое слово");
   }
-};
+}
 
-
-export function lotsofstuff (event) {//очень большая функция, нужно разделить на куски
+export function lotsofstuff(event) {
+  //очень большая функция, нужно разделить на куски
+  const dataStorage = new DataStorage();
+ 
 
   event.preventDefault(); //предотвращаем перезагрузку
+  let inputValue = document.forms.search.elements.search.value;
+  dataStorage.setData('lastInput', inputValue);
   results.classList.remove("segment_hidden");
   const serverUrl =
     "http://newsapi.org/v2/everything?" +
-    `q=${document.forms.search.elements.search.value}&` +
+    `q=${inputValue}&` +
     `from=${weekAgo}&` +
     `to=${date}&` +
     "language=ru&" +
@@ -52,7 +58,7 @@ export function lotsofstuff (event) {//очень большая функция,
         nothingFound.classList.remove("segment_hidden");
         preloader.classList.add("segment_hidden");
         results.classList.add("segment_hidden");
-      } else {   
+      } else {
         nothingFound.classList.add("segment_hidden");
         const resultsArray = cards.articles.map(function (element) {
           const card = new NewsCard(
@@ -65,23 +71,32 @@ export function lotsofstuff (event) {//очень большая функция,
           );
           return card;
         });
+        // const dataStorage = new DataStorage();
+        dataStorage.setData(`${inputValue}`, cards);
+ 
+        let cardlist = new NewsCardList(
+          resultsContainer,
+          resultsArray.slice(0, pageSize)
+        );
 
-        localStorage.setItem('newscards', JSON.stringify(cards));//записали принятые от сервера данные в локальное хранилище
-        const cardlist = new NewsCardList(resultsContainer, resultsArray);
         cardlist.render(); //рендерим контейнер с карточками
 
-        let resultSize=3;
-        
-        function resultSizeIncrement (){
-          console.log(cardlist.cardArray.slice(0, resultSize));
-          if (resultSize<=cardlist.cardArray.length){
-            return resultSize= resultSize+3;
-          } else {
-            return resultsMore.classList.add("segment_hidden");
-          }  
+        if (resultsArray.length <= pageSize) {
+          resultsMore.classList.add("segment_hidden");
+        }
+        let resultSize = pageSize;
+
+        function resultSizeIncrement() {
+          resultSize += pageSize;
+          let list = resultsArray.slice(0, resultSize);
+          cardlist = new NewsCardList(resultsContainer, list);
+          cardlist.render();
+          if (resultsArray.length <= resultSize) {
+            resultsMore.classList.add("segment_hidden");
+          }
         }
 
-        resultsMore.addEventListener('click', resultSizeIncrement);//по клику на показать ещё мы три раза показываем айтемы аррэя
+        resultsMore.addEventListener("click", resultSizeIncrement); //по клику на показать ещё мы три раза показываем айтемы аррэя
 
         window.setTimeout(function () {
           preloader.classList.add("segment_hidden");
@@ -90,18 +105,17 @@ export function lotsofstuff (event) {//очень большая функция,
       }
     })
 
-    .catch(() => {
-      nothingFound.classList.remove("segment_hidden");
-      preloader.classList.add("segment_hidden");
-      results.classList.add("segment_hidden");
-    });
-  event.target.reset();
+  .catch(() => {
+    nothingFound.classList.remove("segment_hidden");
+    preloader.classList.add("segment_hidden");
+    results.classList.add("segment_hidden");
+  });
+  // event.target.reset();
 }
 
-document.forms.search.elements.search.addEventListener("input", validate);//перенесла в index.js
-document.forms.search.addEventListener("submit", validate);//перенесла в index.js
-document.forms.search.addEventListener("submit", lotsofstuff);//перенесла в index.js
-
+document.forms.search.elements.search.addEventListener("input", validate); //перенесла в index.js
+document.forms.search.addEventListener("submit", validate); //перенесла в index.js
+document.forms.search.addEventListener("submit", lotsofstuff); //перенесла в index.js
 
 // export class SearchInput {
 //   constructor(callback){

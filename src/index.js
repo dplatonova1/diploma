@@ -12,6 +12,9 @@ import {DataStorage} from './js/modules/DataStorage.js';
 import * as constants from './js/constants/constants.js';
 import validate from './js/components/SearchInput.js'
 import lotsofstuff from './js/components/SearchInput.js'
+import inputValue from './js/constants/constants.js'
+
+const dataStorage = new DataStorage();
 
 // let date = new Date();
 // let weekAgo = new Date();
