@@ -38,7 +38,7 @@ function search(event) {
   dataStorage.setData("lastInput", inputValue);
   results.classList.remove("segment_hidden");
   const serverUrl =
-    "http://newsapi.org/v2/everything?" +
+    "https://newsapi.org/v2/everything?" +
     `q=${inputValue}&` +
     `from=${ISOweekAgo}&` +
     `to=${ISOdate}&` +
