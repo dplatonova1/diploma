@@ -6,7 +6,7 @@ export class Statistics {
   constructor(news, input) {
     this.input = input; //забираем из хранилища последний инпут
     this.news = news; //забрать объект из хранилища
-    this.dict = {}; //создание пустого объекта для дальнейшей группировки
+    this._dict = {}; //создание пустого объекта для дальнейшей группировки
   }
 
   _showRelated(array) {
@@ -50,7 +50,7 @@ export class Statistics {
       return elem;
     });
     arrayOfData.forEach((element) => {
-      makeDateGroups(element.date, element, this.dict);
+      makeDateGroups(element.date, element, this._dict);
     });
   }
 
@@ -81,7 +81,7 @@ export class Statistics {
         dict[key] = object;
       }
     }
-    const dict = this.dict;
+    const dict = this._dict;
     const result = {};
     Object.keys(dict).forEach(function (elem) {
       let statArr = dict[elem].filter((element) => {

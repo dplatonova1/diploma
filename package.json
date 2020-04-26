@@ -1,7 +1,7 @@
 {
   "name": "diploma",
   "homepage": "https://dplatonova1.github.io/diploma/",
-  "version": "1.0.0",
+  "version": "2.0.3",
   "description": "Diploma project for Yandex Praktikum",
   "main": "index.js",
   "browserslist": [
