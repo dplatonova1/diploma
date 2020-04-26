@@ -1,6 +1,7 @@
 .results__source{
     color: #B6BCBF;
-    margin: 10px 24px 24px 24px;
+    margin: auto 24px 24px 24px;
+    padding-top: 10px;
     letter-spacing: 0.4px;
     text-transform: uppercase;
 }

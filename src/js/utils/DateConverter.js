@@ -18,4 +18,3 @@ export function dateToDays(date) {
   );
   return `${day}, ${weekday}`;
 }
-

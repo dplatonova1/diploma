@@ -7,7 +7,9 @@ export class CommitCardList {
     
     render() {
       const cardsContainer = this.container;
-      this.container.innerHTML = "";
+      while (cardsContainer.firstChild) {
+        cardsContainer.removeChild(cardsContainer.firstChild);
+      }
       this.cardArray.forEach(function(item) {
         const cardTemplate = item.create();
         cardsContainer.appendChild(cardTemplate);

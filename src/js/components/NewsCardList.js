@@ -7,11 +7,13 @@ export class NewsCardList {
     
     render() {
       const container1 = this.container;
-      this.container.innerHTML = "";
+      while (container1.firstChild) {
+        container1.removeChild(container1.firstChild);
+      }
       this.cardArray.forEach(function(item) {
         const cardTemplate = item.create();
         container1.appendChild(cardTemplate);
-      });
+      });  
     }
   }
   

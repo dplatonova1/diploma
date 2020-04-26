@@ -1,4 +1,4 @@
-export function countMentions (elem) {
-    let regex = /природа/gim;
+export function countMentions (elem, value) {
+    let regex = new RegExp(value, 'gmi')
     return elem.match(regex);
   };

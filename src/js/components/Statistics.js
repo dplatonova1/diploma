@@ -1,27 +1,26 @@
 import { DataStorage } from "../modules/DataStorage.js";
 import { dateToDays } from "../utils/DateConverter.js";
-import {countMentions} from "../utils/countMentions.js"
+import { countMentions } from "../utils/countMentions.js";
 
 export class Statistics {
   constructor(news, input) {
-    this.input = input;
-    this.news = news; //забрать объект из локал сторэйджа
-    this.dict = {}; //создание пустого массива для дальнейшей группировки
+    this.input = input; //забираем из хранилища последний инпут
+    this.news = news; //забрать объект из хранилища
+    this.dict = {}; //создание пустого объекта для дальнейшей группировки
   }
 
-  showRelated(){
+  _showRelated(array) {
     let date = new Date();
     let weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
-    let filteredByDate = this.news.articles.filter(function(elem){
-      const publicationDateConvert = new Date(elem.publishedAt)
-      if(publicationDateConvert<=date && publicationDateConvert >= weekAgo ){
-      return publicationDateConvert;}
-      else {
+    return array.filter(function (elem) {
+      const publicationDateConvert = new Date(elem.publishedAt);
+      if (publicationDateConvert <= date && publicationDateConvert >= weekAgo) {
+        return publicationDateConvert;
+      } else {
         return false;
       }
-    })
-    return filteredByDate;
+    });
   }
 
   groupArticles() {
@@ -30,7 +29,7 @@ export class Statistics {
       return {
         date: dateToDays(date),
         title,
-        description
+        description,
       };
     }
 
@@ -41,33 +40,40 @@ export class Statistics {
       }
       dict[key].push(object);
     }
-
-    const arrayOfData = this.news.articles.map((elem) => {
-      elem = arrayToDates(elem.publishedAt, countMentions(elem.title),countMentions(elem.description));
+    const related = this._showRelated(this.news.articles);
+    const arrayOfData = related.map((elem) => {
+      elem = arrayToDates(
+        elem.publishedAt,
+        countMentions(elem.title, this.input),
+        countMentions(elem.description, this.input)
+      );
       return elem;
     });
     arrayOfData.forEach((element) => {
       makeDateGroups(element.date, element, this.dict);
     });
   }
+
+
   createStatisticsHeader() {
-        //массив заголовков
-        const arrayofTitles = this.news.articles.filter(
-          (elem) => countMentions(elem.title)
-        )
+    const related = this._showRelated(this.news.articles);
+    //массив заголовков
+    const arrayofTitles = related.filter((elem) =>
+      countMentions(elem.title, this.input)
+    );
     const analyticsStatItem = document.createElement("div");
     analyticsStatItem.classList.add("analytics__stat");
     const template = `
         <h2 class="typo typo_ff_roboto-slab typo_fs_l typo_lh_l">Вы спросили: «${this.input}»</h2>
-        <p class="typo typo_fs_sm typo_lh_sm">Новостей за неделю: <span class="analytics__quantity">${
-          this.news.totalResults
-        }</span></p>
+        <p class="typo typo_fs_sm typo_lh_sm">Новостей за неделю: <span class="analytics__quantity">${related.length}</span></p>
         <p class="typo typo_fs_sm typo_lh_sm">Упоминаний в заголовках: <span
                 class="analytics__quantity">${arrayofTitles.length}</span></p>
     `;
     analyticsStatItem.insertAdjacentHTML("afterbegin", template);
     return analyticsStatItem;
   }
+
+  
   createAnalyticsGraphs() {
     function dateCountGroup(key, object, dict) {
       //функция создания массива, сгруппированного по датам
@@ -78,15 +84,16 @@ export class Statistics {
     const dict = this.dict;
     const result = {};
     Object.keys(dict).forEach(function (elem) {
-    let statArr = dict[elem].filter((element) =>{
-      return element.title||element.description;    
-    })
-    dateCountGroup(elem, statArr.length, result);
-   });
-  const analyticsChartbox = document.createElement("div");
-
-   Object.entries(result).forEach(function(element){
-    const template = `
+      let statArr = dict[elem].filter((element) => {
+        return element.title || element.description;
+      });
+      dateCountGroup(elem, statArr.length, result);
+    });
+    
+    const analyticsChartbox = document.createElement("div");
+    const sortedByDate = Object.entries(result).sort();
+    sortedByDate.forEach(function (element) {
+      const template = `
     <div class="analytics__chart">
     <p class="chart_date typo typo_fs_sm">${element[0]}</p>
 
@@ -96,8 +103,8 @@ export class Statistics {
         </div>
     </div>
     `;
-    analyticsChartbox.insertAdjacentHTML("afterbegin", template);
-   });
+      analyticsChartbox.insertAdjacentHTML("beforeend", template);
+    });
     analyticsChartbox.classList.add("analytics__chartbox");
     return analyticsChartbox;
   }
