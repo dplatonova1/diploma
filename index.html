@@ -9,8 +9,8 @@
     для курса фронтенд-разработчиков в Яндекс Практикуме">
     <title>NewsAnalyzer</title>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/main.d5398e257e99ce986e58.css">
-<link href="./css/main.d5398e257e99ce986e58.css" rel="stylesheet"><link href="./css/analytics.919d82d241a16cf63e7a.css" rel="stylesheet"><link href="./css/about.a29411e4f3678c30fbe5.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="./css/main.91e22c248906e9188edb.css">
+</head>
 
 <body>
     <div class="page typo">
@@ -31,21 +31,19 @@
                     <h1 class="search__title typo typo_ff_roboto-slab typo_fs_xl typo_lh_xl">Что в мире творится?</h1>
                     <p class="search__paragraph">Введите в поиске любую тему и узнайте,
                         насколько популярной она была в новостях за прошедшую неделю.</p>
-                    <form class="search__input" action="URL">
+                    <form class="search__input" name ="search" novalidate>
                         <input type="text" placeholder="Введите тему новости" name="search"
-                            class="search__input-text typo typo_fs_s typo_lh_s" pattern="^[\wа-яА-Я]{1,}" required>
-                        <button type="submit" class="button search__button typo typo_fs_sm typo_lh_sm">Искать</button>
+                            class="search__input-text typo typo_fs_s typo_lh_s"  required>
+                            <span class= "error typo typo_fs_s typo_lh_s" id="error"></span>
+                            <button type="submit" class="button search__button typo typo_fs_sm typo_lh_sm">Искать</button>
                     </form>
                 </div>
                 <div class="search__rect"></div>
             </section>
 
-            <section class="preloader">
-                <div class="preloader__image"></div>
-                <p class="preloader__text typo typo_fs_sm typo_lh_sm">Идет поиск новостей...</p>
-            </section>
+           
 
-            <section class="nothing">
+            <section class="nothing segment_hidden">
                 <svg class="nothing__image" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="43" cy="43" r="36.5" stroke="#D1D2D6" />
                     <path d="M69 69L88.5 88.5" stroke="#D1D2D6" />
@@ -60,75 +58,19 @@
                     ничего не найдено.</p>
             </section>
 
-            <section class="results">
+            <section class="results segment_hidden">
+                <div class="preloader">
+                    <div class="preloader__image"></div>
+                    <p class="preloader__text typo typo_fs_sm typo_lh_sm">Идет поиск новостей...</p>
+                </div>
                 <div class="segment__header">
                     <h2 class="segment__title typo_ff_roboto-slab typo typo_fs_l typo_lh_l">Результаты поиска</h2>
                     <a class="segment__link segment_black-on-white typo typo_fs_sm typo_lh_sm content__link"
                         href="paper.html">Посмотреть аналитику &gt;</a>
                 </div>
                 <div class="results__container">
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/card_image.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">Национальное достояние – парки
-                        </h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">В 2016 году Америка отмечала важный
-                            юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                            приобщиться к природе.</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Лента.ру</p>
-                    </div>
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/image_04.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">Лесные огоньки: история одной
-                            фотографии</h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">Фотограф отвлеклась от освещения суровой
-                            политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-                            из местных чудес природы.</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Медуза</p>
-                    </div>
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/image_07.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">«Первозданная тайга»: новый
-                            фотопроект Игоря Шпиленка</h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">Знаменитый фотограф снимает первозданные
-                            леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в
-                            Двинско-Пинежскую тайгу, где...</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Риа</p>
-                    </div>
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/image_06.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">Национальное достояние – парки
-                        </h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">В 2016 году Америка отмечала важный
-                            юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                            приобщиться к природе.</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Лента.ру</p>
-                    </div>
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/image_01.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">Лесные огоньки: история одной
-                            фотографии</h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">Фотограф отвлеклась от освещения суровой
-                            политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-                            из местных чудес природы.</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Медуза</p>
-                    </div>
-                    <div class="results__card">
-                        <div class="results__image" style="background-image: url(./images/image_05.png)"></div>
-                        <p class="results__date typo typo_fs_sm typo_lh_sm">2 августа, 2019</p>
-                        <h3 class="results__cardtitle typo typo_ff_roboto-slab typo_fs_m">«Первозданная тайга»: новый
-                            фотопроект Игоря Шпиленка</h3>
-                        <p class="results__paragraph typo typo_fs_s typo_lh_s">Знаменитый фотограф снимает первозданные
-                            леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в
-                            Двинско-Пинежскую тайгу, где...</p>
-                        <p class="results__source typo typo_ff_roboto-slab typo_fs_s typo_lh_s">Риа</p>
-                    </div>
                 </div>
-                <button class="button results__more segment_black-on-white typo typo_fs_sm typo_lh_sm">Показать
+                <button class="button results__more segment_hidden segment_black-on-white typo typo_fs_sm typo_lh_sm">Показать
                     еще</button>
             </section>
 
@@ -186,7 +128,7 @@
             </ul>
         </footer>
     </div>
-  <script src="main.83c8bca1a5ad16e5cf99.js"></script>
-<script type="text/javascript" src="main.83c8bca1a5ad16e5cf99.js"></script><script type="text/javascript" src="analytics.a08fc60e131cfb8156cd.js"></script><script type="text/javascript" src="about.ee0701a9a49d8c267ace.js"></script></body>
+  <script src="./js/main.c7eaec6a2b8607ba4667.js"></script>
+</body>
 
 </html>
