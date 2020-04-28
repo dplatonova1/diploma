@@ -12,6 +12,5 @@ export class NewsApi {
         }
         return Promise.reject(res.status);
       })
-      .catch((err) => console.log(`Во время запроса произошла ошибка ${err}. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.`));
   }
 }

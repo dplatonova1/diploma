@@ -1,0 +1,11 @@
+.bad-request{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+	margin: 0;
+	min-height: 374px;
+	background-color: #F5F6F7;
+	position: relative;
+}

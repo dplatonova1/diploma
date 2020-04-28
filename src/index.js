@@ -19,24 +19,31 @@ import {
   preloader,
   nothingFound,
   pageSize,
+  inputField,
+  searchButton,
+  badRequest
 } from "./js/constants/constants.js";
 
 const dataStorage = new DataStorage();
 
-let date =  new Date();
+const date =  new Date();
 let ISOdate = date.toISOString();
-let weekAgo = new Date();
+const weekAgo = new Date();
 weekAgo.setDate(weekAgo.getDate() - 7);
 let ISOweekAgo = weekAgo.toISOString();
 
 
 const searchInput = new SearchInput(search);
+let resultSize = pageSize;
+
+
 
 function search(event) {
   event.preventDefault(); //предотвращаем перезагрузку
-  let inputValue = document.forms.search.elements.search.value;
-  dataStorage.setData("lastInput", inputValue);
-  results.classList.remove("segment_hidden");
+  const inputValue = document.forms.search.elements.search.value;
+  inputField.setAttribute('disabled', 'disabled');
+
+  preloader.classList.remove("segment_hidden");
   const serverUrl =
     "https://newsapi.org/v2/everything?" +
     `q=${inputValue}&` +
@@ -56,12 +63,18 @@ function search(event) {
     .getNews() //в это же время отправляем запрос к апи
     .then(function (cards) {
       if (cards.articles.length === 0) {
+        searchButton.removeAttribute('disabled');
+        inputField.removeAttribute('disabled');
         nothingFound.classList.remove("segment_hidden");
         preloader.classList.add("segment_hidden");
         results.classList.add("segment_hidden");
       } else {
+        results.classList.remove("segment_hidden");
         nothingFound.classList.add("segment_hidden");
-        const resultsArray = cards.articles.map(function (element) {
+        preloader.classList.add("segment_hidden");
+        searchButton.removeAttribute('disabled');
+        inputField.removeAttribute('disabled');
+        const resultsCards = cards.articles.map(function (element) {
           const card = new NewsCard(
             element.title,
             element.urlToImage,
@@ -72,30 +85,37 @@ function search(event) {
           );
           return card;
         });
-        dataStorage.setData(`data`, cards);
+
+        if (`${inputValue}` in localStorage){
+          dataStorage.getData('data');
+        } else {
+          dataStorage.setData("lastInput", inputValue);
+          dataStorage.setData('data', cards);
+        }
 
         let cardlist = new NewsCardList(
           resultsContainer,
-          resultsArray.slice(0, pageSize)
+          resultsCards.slice(0, pageSize)
         );
 
         cardlist.render(); //рендерим контейнер с карточками
-        if (resultsArray.length <= pageSize) {
+        if (resultsCards.length <= pageSize) {
           resultsMore.classList.add("segment_hidden");
         }
-        let resultSize = pageSize;
 
-        function resultSizeIncrement() { //коллбэк для кнопки "показать ещё"
-          resultSize += pageSize;
-          let list = resultsArray.slice(0, resultSize);
-          cardlist = new NewsCardList(resultsContainer, list);
-          cardlist.render();
-          if (resultsArray.length <= resultSize) {
-            resultsMore.classList.add("segment_hidden");
-          }
-        }
+        // let resultSize = pageSize;
+          resultSizeIncrement(resultsContainer);
+        // function resultSizeIncrement() { //коллбэк для кнопки "показать ещё"
+        //   resultSize += pageSize;
+        //   const list = resultsCards.slice(0, resultSize);
+        //   cardlist = new NewsCardList(resultsContainer, list);
+        //   cardlist.render();
+        //   if (resultsCards.length <= resultSize) {
+        //     resultsMore.classList.add("segment_hidden");
+        //   }
+        // }
 
-        resultsMore.addEventListener("click", resultSizeIncrement); 
+
 
         window.setTimeout(function () {
           preloader.classList.add("segment_hidden");
@@ -104,14 +124,42 @@ function search(event) {
       }
     })
 
-    .catch(() => {
-      nothingFound.classList.remove("segment_hidden");
+    .catch((err) => {
+      console.log(`Во время запроса произошла ошибка ${err}`);
+      badRequest.classList.remove("segment_hidden");
+      searchButton.removeAttribute('disabled');
+      inputField.removeAttribute('disabled');
       preloader.classList.add("segment_hidden");
       results.classList.add("segment_hidden");
     });
 }
+let currentSize = resultSize;
+
+function resultSizeIncrement(container) { //коллбэк для кнопки "показать ещё". ошибка в том что он не скидывает длину еардлиста
+resultSize += pageSize;
+const data = dataStorage.getData('data');
+const list = data.articles.slice(currentSize, resultSize);
+const resultsCards = list.map(function (element) {
+  const card = new NewsCard(
+    element.title,
+    element.urlToImage,
+    element.publishedAt,
+    element.description,
+    element.source.name,
+    element.url
+  );
+  return card;
+});
+let cardlist = new NewsCardList(container, resultsCards);
+cardlist.render();
+if (data.articles.length <= resultSize) {
+  resultsMore.classList.add("segment_hidden");
+}
+}
 
 //добавляем обработчики
+
 document.forms.search.elements.search.addEventListener("input", searchInput.validate);
 document.forms.search.addEventListener("submit", searchInput.validate);
 document.forms.search.addEventListener("submit", search);
+resultsMore.addEventListener("click", ()=>{resultSizeIncrement(resultsContainer)}); 

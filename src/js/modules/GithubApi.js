@@ -12,7 +12,6 @@ export class GithubApi {
           }
           return Promise.reject(res.status);
         })
-        .catch((err) => console.log(`Похоже, что коммитов ещё не было`));
     }
   }
   

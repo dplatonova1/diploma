@@ -10,8 +10,8 @@ export class Statistics {
   }
 
   _showRelated(array) {
-    let date = new Date();
-    let weekAgo = new Date();
+    const date = new Date();
+    const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
     return array.filter(function (elem) {
       const publicationDateConvert = new Date(elem.publishedAt);

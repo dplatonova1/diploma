@@ -1,7 +1,5 @@
 .preloader__text{
     color: #B6BCBF;
-    position: absolute;
     padding-top: 24px;
-    top: 55%;
-    margin: 24px auto auto auto;
+    margin: 0 auto 80px auto;
 }

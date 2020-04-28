@@ -1,4 +1,4 @@
-import {error} from "../constants/constants.js"
+import {errorSpan, searchButton, inputField } from "../constants/constants.js"
 
 export class SearchInput {
   constructor(callback){
@@ -6,10 +6,12 @@ export class SearchInput {
   }
   validate(event){
     if(event.target.checkValidity()){
-      return error.textContent='';
-    } else{
-      document.getElementById('error').classList.add('error');
-      return error.textContent='Нужно ввести ключевое слово';
+      inputField.removeAttribute('disabled');
+      searchButton.removeAttribute('disabled');
+      return errorSpan.textContent='';
+    } else{  
+      errorSpan.classList.add('error');
+      return errorSpan.textContent='Нужно ввести ключевое слово';
     }
   }
 }
