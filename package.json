@@ -52,6 +52,6 @@
     "babel-polyfill": "6.26.0",
     "core-js": "3.4.1",
     "newsapi": "^2.4.0",
-    "swiper": "^5.3.6"
+    "swiper": "^5.3.8"
   }
 }

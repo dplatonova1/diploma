@@ -1,18 +1,20 @@
-
 export class NewsCardList {
-    constructor(container, cardArray) {
+    constructor(container) {
       this.container = container;
-      this.cardArray = cardArray;
     }
     
-    render() {
-      const container1 = this.container;
-      while (container1.firstChild) {
-        container1.removeChild(container1.firstChild);
+    clear(){
+      const container = this.container;
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
       }
-      this.cardArray.forEach(function(item) {
+    }
+
+    render(array) {
+      const container = this.container;
+      array.forEach(function(item) {
         const cardTemplate = item.create();
-        container1.appendChild(cardTemplate);
+        container.appendChild(cardTemplate);
       });  
     }
   }

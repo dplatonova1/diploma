@@ -10,6 +10,7 @@
     <title>NewsAnalyzer</title>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
+    <link rel="stylesheet" href="../node_modules/swiper/css/swiper.min.css">
 </head>
 
 <body>
@@ -97,8 +98,6 @@
                         &gt;</a>
                 </div>
 
-                <!-- Swiper -->
-
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                      </div>
@@ -110,8 +109,6 @@
                     <img src="<%=require('./images/slider-control-right.svg').default%>" alt="navigation label right"
                         class="swiper-button-next">
                 </div>
-
-
 
 
             </section>
@@ -159,42 +156,7 @@
         </footer>
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 5,
-            spaceBetween: 16,
-            slidesPerGroup: 1,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-              breakpoints: {
-              320: {
-                slidesPerView: 1,
-                spaceBetween: 8,
-              },
-              440: {
-                slidesPerView: 2,
-                spaceBetween: 8,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 8,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 16,
-              },
-             
-            }
-        });
-    </script>
+    <script src="../node_modules/swiper/js/swiper.min.js"></script>
 </body>
 
 </html>

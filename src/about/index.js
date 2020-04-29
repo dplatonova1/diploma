@@ -3,13 +3,12 @@ import html from "../images/html.svg";
 import css from "../images/css.svg";
 import js from "../images/js.svg";
 import webpack from "../images/webpack.svg";
-import { swiper } from "../js/swiper/swiper.min.js";
 import { GithubApi } from "../js/modules/GithubApi.js";
 import { CommitCard } from "../js/components/CommitCard.js";
 import { CommitCardList } from "../js/components/CommitCardList.js";
 
 const commitsUrl = "https://api.github.com/repos/dplatonova1/diploma/commits";
-swiper();
+
 const githubApi = new GithubApi({
   baseUrl: commitsUrl,
   method: "GET",
