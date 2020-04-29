@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const webpack = require("webpack");
+var Swiper = require('swiper');
 const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
@@ -22,6 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        
         use: {
           loader: "babel-loader",
         },
@@ -85,7 +87,6 @@ module.exports = {
       filename: "paper.html",
     }),
     new WebpackMd5Hash(),
-
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),

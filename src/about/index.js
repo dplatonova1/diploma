@@ -6,6 +6,9 @@ import webpack from "../images/webpack.svg";
 import { GithubApi } from "../js/modules/GithubApi.js";
 import { CommitCard } from "../js/components/CommitCard.js";
 import { CommitCardList } from "../js/components/CommitCardList.js";
+import Swiper from 'swiper';
+// import { Swiper, Navigation, Pagination} from 'swiper/js/swiper.esm.js';
+// Swiper.use([Navigation, Pagination]);
 
 const commitsUrl = "https://api.github.com/repos/dplatonova1/diploma/commits";
 

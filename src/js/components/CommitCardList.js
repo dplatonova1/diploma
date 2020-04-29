@@ -1,4 +1,6 @@
 import Swiper from 'swiper';
+// import { Swiper, Navigation, Pagination} from 'swiper/js/swiper.esm.js';
+// Swiper.use([Navigation, Pagination]);
 export class CommitCardList {
     constructor(container, initialArray) {
       this.container = container;
