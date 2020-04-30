@@ -84,7 +84,7 @@ export class Statistics {
     const dict = this._dict;
     const result = {};
     Object.keys(dict).forEach(function (elem) {
-      let statArr = dict[elem].filter((element) => {
+      const statArr = dict[elem].filter((element) => {
         return element.title || element.description;
       });
       dateCountGroup(elem, statArr.length, result);

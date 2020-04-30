@@ -26,10 +26,10 @@ import {
 
 const dataStorage = new DataStorage();
 const date = new Date();
-let ISOdate = date.toISOString();
+const ISOdate = date.toISOString();
 const weekAgo = new Date();
 weekAgo.setDate(weekAgo.getDate() - 7);
-let ISOweekAgo = weekAgo.toISOString();
+const ISOweekAgo = weekAgo.toISOString();
 const searchInput = new SearchInput(search);
 const cardlist = new NewsCardList(resultsContainer);
 let currentSize = 0;
@@ -60,12 +60,14 @@ function search(event) {
     .getNews() //в это же время отправляем запрос к апи
     .then(function (cards) {
       if (cards.articles.length === 0) {
+        badRequest.classList.add("segment_hidden");
         searchButton.removeAttribute("disabled");
         inputField.removeAttribute("disabled");
         nothingFound.classList.remove("segment_hidden");
         preloader.classList.add("segment_hidden");
         results.classList.add("segment_hidden");
       } else {
+        badRequest.classList.add("segment_hidden");
         results.classList.remove("segment_hidden");
         nothingFound.classList.add("segment_hidden");
         preloader.classList.add("segment_hidden");
