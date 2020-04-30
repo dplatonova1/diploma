@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const webpack = require("webpack");
+var Swiper = require('swiper');
 const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js",
+    filename: "./js/[name].[chunkhash].js",
   },
 
   module: {
@@ -22,6 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        
         use: {
           loader: "babel-loader",
         },
@@ -70,22 +72,21 @@ module.exports = {
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/index.html",
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/about.html",
       filename: "about.html",
     }),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: "./src/paper.html",
       filename: "paper.html",
     }),
     new WebpackMd5Hash(),
-
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),

@@ -3,4 +3,5 @@
 @import url('../blocks/content/results/results.css');
 @import url('../blocks/content/preloader/preloader.css');
 @import url('../blocks/content/nothing/nothing.css');
+@import url('../blocks/content/bad-request/bad-request.css');
 @import url('../blocks/common.css');

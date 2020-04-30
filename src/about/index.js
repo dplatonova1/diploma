@@ -1,10 +1,44 @@
 import "../pages/about.css";
-import inga from "../images/inga.png"
-import anton from "../images/anton.png"
-import mariia from "../images/mariia.png"
-import html from "../images/html.svg"
-import css from "../images/css.svg"
-import js from "../images/js.svg"
-import webpack from "../images/webpack.svg"
-import {swiper} from "../js/swiper/swiper.min.js"
-swiper();
+import html from "../images/html.svg";
+import css from "../images/css.svg";
+import js from "../images/js.svg";
+import webpack from "../images/webpack.svg";
+import { GithubApi } from "../js/modules/GithubApi.js";
+import { CommitCard } from "../js/components/CommitCard.js";
+import { CommitCardList } from "../js/components/CommitCardList.js";
+import Swiper from 'swiper';
+// import { Swiper, Navigation, Pagination} from 'swiper/js/swiper.esm.js';
+// Swiper.use([Navigation, Pagination]);
+
+const commitsUrl = "https://api.github.com/repos/dplatonova1/diploma/commits";
+
+const githubApi = new GithubApi({
+  baseUrl: commitsUrl,
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+}); //создаём экземпляр класса апи для коммитов
+
+githubApi
+  .getCommits() //отправляем запрос к апи
+  .then(function (commits) {
+    const commitContainer = document.querySelector(".swiper-wrapper");
+    const authorAvatar = commits[0].author.avatar_url;
+    const commitArray = commits.map(function (element) {
+      const commitCard = new CommitCard(
+        element.commit.committer.name,
+        element.commit.committer.email,
+        element.commit.committer.date,
+        element.commit.message,
+        authorAvatar
+      );
+      return commitCard;
+    });
+    const commitList = new CommitCardList(commitContainer, commitArray);
+    commitList.render();
+  })
+
+  .catch(() => {
+    console.log(`Похоже, что коммитов ещё не было`);
+  });

@@ -1,8 +1,4 @@
-@import url('../nothing/__image/nothing__image.css');
-@import url('../nothing/__text/nothing__text.css');
-@import url('../nothing/__title/nothing__title.css');
-
-.nothing {
+.bad-request{
     display: flex;
     flex-direction: column;
     justify-content: center;

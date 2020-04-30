@@ -3,7 +3,8 @@
     font-weight: bold;
     font-size: 1.25rem;
     border: none;
-    margin-left: 104px;
+    margin: auto auto auto 104px;
+    /* margin-left: 104px; */
 }
 
 @media screen and (max-width: 768px){

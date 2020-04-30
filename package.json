@@ -1,7 +1,7 @@
 {
   "name": "diploma",
   "homepage": "https://dplatonova1.github.io/diploma/",
-  "version": "1.0.0",
+  "version": "2.0.3",
   "description": "Diploma project for Yandex Praktikum",
   "main": "index.js",
   "browserslist": [
@@ -48,8 +48,10 @@
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
+    "@octokit/rest": "^17.5.1",
     "babel-polyfill": "6.26.0",
     "core-js": "3.4.1",
-    "swiper": "^5.3.6"
+    "newsapi": "^2.4.0",
+    "swiper": "^5.3.8"
   }
 }
